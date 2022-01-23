@@ -1,7 +1,3 @@
-//
-// Created by Admin on 22/9/2021.
-//
-
 #include "matrix.hpp"
 #include <vector>
 #include <iostream>

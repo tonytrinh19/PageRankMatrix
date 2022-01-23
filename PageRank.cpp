@@ -1,7 +1,3 @@
-//
-// Created by Tony Trinh on 10/6/2021.
-//
-
 #include "PageRank.hpp"
 #include <exception>
 #include <iostream>

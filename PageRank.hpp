@@ -1,7 +1,3 @@
-//
-// Created by Tony Trinh on 10/6/2021.
-//
-
 #ifndef LAB1TEMPLATE_PAGERANK_HPP
 #define LAB1TEMPLATE_PAGERANK_HPP
 #include <cstdlib>

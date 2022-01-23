@@ -1,7 +1,3 @@
-//
-// Created by Admin on 22/9/2021.
-//
-
 #ifndef LAB1TEMPLATE_MATRIX_HPP
 #define LAB1TEMPLATE_MATRIX_HPP
 
