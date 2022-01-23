@@ -4,4 +4,4 @@ project(lab1template)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(assignment1template main.cpp matrix.cpp matrix.hpp PageRank.cpp PageRank.hpp)
+add_executable(PageRankMatrix main.cpp matrix.cpp matrix.hpp PageRank.cpp PageRank.hpp)

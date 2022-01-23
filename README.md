@@ -1,8 +1,17 @@
-# PageRankMatrix
+# Page Rank Matrix
+
+### Table Of Contents
+- [Table Of Contents](#table-of-contents)
+- [Installation](#instalation)
+- [About](#about)
+
+### Installation
 
 Simulate Google Page Rank algorithm using matrix.
 
 To run the project and make changes to the project clone the repository. Then, reload the CMakeLists.txt for the IDE to recompile the .idea and cmake-build-debug folders.
+
+### About
 
 Take a couple of minutes to understand what this program does, and how the algorithm is implemented:
 
