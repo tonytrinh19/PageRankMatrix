@@ -56,8 +56,9 @@ Matrix::Matrix(const int n) {
     if (n <= 0) {
         throw "You cannot create a matrix with zero or negative rows or columns";
     }
-    numOfRows = n;
+    numOfRows    = n;
     numOfColumns = n;
+
     vector<double> valueVector(n, 0.0);
     for (int i = 0; i < n; i++) {
         matrix.push_back(valueVector);
@@ -78,8 +79,9 @@ Matrix::Matrix(const int r, const int c) {
     if (r <= 0 || c <= 0) {
         throw "You cannot create a matrix with zero or negative rows or columns";
     }
-    numOfRows = r;
+    numOfRows    = r;
     numOfColumns = c;
+
     vector<double> valueVector(c, 0.0);
     for (int i = 0; i < r; i++) {
         matrix.push_back(valueVector);
@@ -95,7 +97,8 @@ Matrix::Matrix(const int r, const int c) {
 Matrix::Matrix(const double *values, const int size) {
     // Checks if size is a perfect square number.
     if (size == 0) {
-        throw invalid_argument("Unable to generate a matrix from the given input, needs to be a perfect square number.");
+        throw invalid_argument(
+                "Unable to generate a matrix from the given input, needs to be a perfect square number.");
     } else if (ceil((double) sqrt(size)) == floor((double) sqrt(size))) {
         int matrixSize = (int) sqrt(size);
         numOfRows = matrixSize;
@@ -115,7 +118,8 @@ Matrix::Matrix(const double *values, const int size) {
             }
         }
     } else {
-        throw invalid_argument("Unable to generate a matrix from the given input, needs to be a perfect square number.");
+        throw invalid_argument(
+                "Unable to generate a matrix from the given input, needs to be a perfect square number.");
     }
 }
 
@@ -180,6 +184,7 @@ bool operator==(const Matrix &left, const Matrix &right) {
     if (isMatrixSameSize(left.numOfRows, left.numOfColumns,
                          right.numOfRows, right.numOfColumns)) {
         bool sameValues = false;
+
         for (int i = 0; i < left.numOfRows; i++) {
             for (int j = 0; j < left.numOfColumns; j++) {
                 // Check whether the values are within tolerance of one another
@@ -250,7 +255,7 @@ Matrix Matrix::operator--(int) {
 Matrix operator+(Matrix left, const Matrix &right) {
     if (isMatrixSameSize(left.getNumOfRows(), left.getNumOfColumns(),
                          right.getNumOfRows(), right.getNumOfColumns())) {
-        vector<vector<double>> leftMatrix = left.getMatrix();
+        vector<vector<double>> leftMatrix  = left.getMatrix();
         vector<vector<double>> rightMatrix = right.matrix;
 
         Matrix newMatrix(right.numOfRows, right.numOfColumns);
@@ -276,7 +281,7 @@ Matrix operator+(Matrix left, const Matrix &right) {
 Matrix operator-(Matrix left, const Matrix &right) {
     if (isMatrixSameSize(left.getNumOfRows(), left.getNumOfColumns(),
                          right.getNumOfRows(), right.getNumOfColumns())) {
-        vector<vector<double>> leftMatrix = left.getMatrix();
+        vector<vector<double>> leftMatrix  = left.getMatrix();
         vector<vector<double>> rightMatrix = right.matrix;
 
         Matrix newMatrix(right.numOfRows, right.numOfColumns);
@@ -335,7 +340,8 @@ Matrix &Matrix::operator-=(const Matrix &right) {
  */
 Matrix &Matrix::operator*=(const Matrix &right) {
     if (numOfColumns != right.numOfRows) {
-        throw invalid_argument("Number of columns of first matrix must be the same as number of rows of the second matrix");
+        throw invalid_argument(
+                "Number of columns of first matrix must be the same as number of rows of the second matrix");
     }
     vector<double> row;
     vector<vector<double>> newMatrix;
@@ -365,7 +371,8 @@ Matrix &Matrix::operator*=(const Matrix &right) {
  */
 Matrix operator*(Matrix left, const Matrix &right) {
     if (left.getNumOfColumns() != right.numOfRows) {
-        throw invalid_argument("Number of columns of first matrix must be the same as number of rows of the second matrix");
+        throw invalid_argument(
+                "Number of columns of first matrix must be the same as number of rows of the second matrix");
     }
     left *= right;
 

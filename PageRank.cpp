@@ -23,10 +23,10 @@ void runPageRank() {
 
         vector<double> values_vector = getConnectivityValuesAsVector(input_file);
 
-        Matrix importance_matrix = generateImportanceMatrix(values_vector.data(), (int) values_vector.size());
+        Matrix importance_matrix           = generateImportanceMatrix(values_vector.data(), (int) values_vector.size());
         Matrix probability_teleport_matrix = generateProbabilityTeleportMatrix(importance_matrix.getNumOfColumns());
-        Matrix transition_matrix = generateTransitionMatrix(importance_matrix, probability_teleport_matrix);
-        Matrix final_matrix = doMarkovProcessToGetFinalMatrix(transition_matrix);
+        Matrix transition_matrix           = generateTransitionMatrix(importance_matrix, probability_teleport_matrix);
+        Matrix final_matrix                = doMarkovProcessToGetFinalMatrix(transition_matrix);
         printResult(final_matrix);
         input_file.close();
     }

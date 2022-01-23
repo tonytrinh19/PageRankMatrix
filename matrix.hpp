@@ -18,9 +18,9 @@ public:
 
     Matrix(const double *, int);
 
-    Matrix &operator=(Matrix&);
+    Matrix &operator=(Matrix &);
 
-    Matrix(const Matrix&);
+    Matrix(const Matrix &);
 
     ~Matrix() = default;
 
@@ -65,8 +65,6 @@ public:
         return !(rows < 0 || rows >= numOfRows
                  || columns < 0 || columns >= numOfColumns);
     }
-
-
 };
 
 #endif //LAB1TEMPLATE_MATRIX_HPP
